@@ -2,22 +2,24 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|group_name|varchar(255)|null:  false,unique: true|
+|name|string|null:  false,unique: true|
 
 ### Association
--has_many :users, through: :groups
+-has_many :users, through: :groups_users
+-has_many :groups_users
 -has_many :messages
 
 ## usersテーブル
 
 |Column|Type|Options|
 |------|----|-------|
-|name|varchar(255)|null: false|
-|password|char(32)|null: false,  unique: true|
-|e-mail|varchar(255)|null: false, unique: true|
+|name|string|null: false, index:  true|
+|password|string|null: false,  unique: true|
+|e-mail|string|null: false, unique: true|
 
 ### Association
-- has_many  :groups,  through:  :users
+- has_many  :groups,  through:  :groups_users
+- has_many  :groups_users
 - has_many  :messages
 
 
@@ -25,8 +27,8 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|user_id|integer|null: false, foreign_key: true|
-|group_id|integer|null: false, foreign_key: true|
+|user_id|references|null: false, foreign_key: true|
+|group_id|referencesr|null: false, foreign_key: true|
 
 ### Association
 - belongs_to :group
@@ -38,8 +40,8 @@
 |------|----|-------|
 |body|text|
 |image|string|
-|user_id|interger|null: false,  foreign:  true|
-|group_id|interger|null:  false,  foreign_key: true|
+|user_id|references|null: false,  foreign:  true|
+|group_id|references|null:  false,  foreign_key: true|
 
 ### Association
 - belongs_to :group
