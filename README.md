@@ -1,3 +1,13 @@
+##  grouosテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|group_name|varchar(255)|null:  false,unique: true|
+
+### Association
+-has_many :users, through: :groups
+-has_many :messages
+
 ## usersテーブル
 
 |Column|Type|Options|
@@ -10,15 +20,6 @@
 - has_many  :groups,  through:  :users
 - has_many  :messages
 
-##  grouosテーブル
-
-|Column|Type|Options|
-|------|----|-------|
-|group_name|varchar(255)|null:  false,unique: true|
-
-### Association
--has_many :users, through: :groups
--has_many :messages
 
 ## groups_usersテーブル
 
