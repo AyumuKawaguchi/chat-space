@@ -21,9 +21,11 @@
       font-weight: bold;
       color:#FFFFFF;
       text-align:left;
+      margin-left:20px;
     }
     &__icon{
       color:#FFFFFF;
+      margin-right:10px;
     } 
   }
 }
@@ -93,7 +95,7 @@
     
 .chatcenter{
   background-color: #fafafa;
-  width: calc(100vw - 378px);
+  width: calc(100vw - 380px);
   float:left;
   overflow: scroll;
   position: absolute;
@@ -135,41 +137,41 @@
   position:absolute;
   top:848px;
   left:300px;
-}
-.form__message{
-  background-color: #ddd;
-  height:50px;
-  width:  calc(100vw - 378px);
-  position:relative;
-  top:20px;
-  &__box1{
-    float:left;
-    background-color: white;
-    width:950px;
-    display: flex;
-    justify-content: space-between;
-    line-height:50px;
-    &__text{
-      font-size: 16px;
-      color:  #434A54;
-      padding-left: 10px;
+  &__message{
+    background-color: #ddd;
+    height:50px;
+    width:  calc(100vw - 380px);
+    position:relative;
+    top:20px;
+    &__box1{
+      float:left;
+      background-color: white;
+      width:1185px;
+      display: flex;
+      justify-content: space-between;
+      line-height:50px;
+      &__text{
+        font-size: 16px;
+        color:  #434A54;
+        padding-left: 10px;
+      }
+      &__icon{
+        padding-right: 10px;
+  
+      }
     }
-    &__icon{
-      padding-right: 10px;
-
+    &__box2{
+      width:100px;
+      background-color:#38AEF0;
+      margin-left: 15px;
+      float:left;
+      line-height:50px;
+      text-align:center;
     }
   }
-  &__box2{
-    width:90px;
-    background-color:#38AEF0;
-    margin-left: 15px;
-    float:left;
-    line-height:50px;
-    text-align:center;
+  
+  .btn-send {
+    text-decoration: none ;
+    color: #FFFFFF;
   }
-}
-
-.btn-send {
-  text-decoration: none ;
-  color: #FFFFFF;
 }
