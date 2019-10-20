@@ -1,24 +1,48 @@
-# README
+##  grouosテーブル
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+|Column|Type|Options|
+|------|----|-------|
+|name|string|null:  false,unique: true|
 
-Things you may want to cover:
+### Association
+-has_many :users, through: :groups_users
+-has_many :groups_users
+-has_many :messages
 
-* Ruby version
+## usersテーブル
 
-* System dependencies
+|Column|Type|Options|
+|------|----|-------|
+|name|string|null: false, index:  true|
+|password|string|null: false,  unique: true|
+|e-mail|string|null: false, unique: true|
 
-* Configuration
+### Association
+- has_many  :groups,  through:  :groups_users
+- has_many  :groups_users
+- has_many  :messages
 
-* Database creation
 
-* Database initialization
+## groups_usersテーブル
 
-* How to run the test suite
+|Column|Type|Options|
+|------|----|-------|
+|user_id|references|null: false, foreign_key: true|
+|group_id|referencesr|null: false, foreign_key: true|
 
-* Services (job queues, cache servers, search engines, etc.)
+### Association
+- belongs_to :group
+- belongs_to :user
 
-* Deployment instructions
+##  messagesテーブル
 
-* ...
+|Column|Type|Options|
+|------|----|-------|
+|body|text|
+|image|string|
+|user_id|references|null: false,  foreign:  true|
+|group_id|references|null:  false,  foreign_key: true|
+
+### Association
+- belongs_to :group
+- belongs_to :user
