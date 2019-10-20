@@ -7,10 +7,9 @@
     color: #FFFFFF;
   }
 }
-
 .sidebar{
   position:fixed;
-  height:102px;
+  height:103px;
   width:300px;
   background-color:#253141;
   &__box{
@@ -22,12 +21,157 @@
       font-weight: bold;
       color:#FFFFFF;
       text-align:left;
+      margin-left:20px;
     }
     &__icon{
       color:#FFFFFF;
+      margin-right:10px;
+    } 
+  }
+}
+.sidebottom{
+  height:100vh;
+  position:fixed;
+  top:127px;
+  width:300px;
+  background-color:#2f3e51;
+  overflow: scroll;
+  &__group{
+    height:71px;
+    color:#FFFFFF;
+    margin-left:20px;
+    margin-right:20px;
+    &__name{
+      font-size:15px;
+      padding-top:20px;
+      padding-bottom:5px;
     }
+    &__message{
+      font-size:11px;
+    }
+  }
+}
+.chattop{
+  background-color: #FFFFFF;
+  color:black;
+  height:102px;
+  width:calc(100vw - 300px);
+  float:right;
+  border:solid 1px #eeeeee;
+  &__box{
+    margin-left:40px;
+    margin-right:40px;
+    display: flex;
+    justify-content: space-between;
+    &__mini1{
+      &__title{
+        font-size:20px;
+        color:#333333;
+        padding-top:35px;
+        padding-bottom:15px;
+      }
+      &__member{
+        font-size:12px;
+        color:#999999;
+      }
+    }
+    &__mini2{
+      &__btn{
+        padding: 0 20px;
+        margin-top: 28px;
+        height: 40px;
+        line-height:40px;
+        border:solid 1px #38AEF0;
+      }
+    }
+  }
+}
+
+.btn-edit {
+  text-decoration: none ;
+  color: #38AEF0;
+}
 
     
+.chatcenter{
+  background-color: #fafafa;
+  width: calc(100vw - 380px);
+  float:left;
+  overflow: scroll;
+  position: absolute;
+  top:127px;
+  bottom:0;
+  left:300px;
+  right:40;
+  padding-top: 46px;
+  padding-bottom: 46px;
+  padding-left: 40px;
+  padding-right:  40px;
+  &__namebox{
+    height: 26px;
+    padding-bottom: 10px;
+    display: flex;
+    &__name{
+      font-size:  16px;
+      font-weight:  bold;
+      color:  #434A54;
+    }
+    &__days{
+      font-size:12px;
+      color:  #999999;
+    }
+  }
+  &__textbox{
+    font-size:14px;
+    color:#434A54;
+    padding-bottom:40px;
   }
   
+}
+
+.form{
+  height: 90px;
+  padding-left: 40px;
+  padding-right: 40px;
+  background-color: #ddd;
+  position:absolute;
+  top:848px;
+  left:300px;
+  &__message{
+    background-color: #ddd;
+    height:50px;
+    width:  calc(100vw - 380px);
+    position:relative;
+    top:20px;
+    &__box1{
+      float:left;
+      background-color: white;
+      width:1185px;
+      display: flex;
+      justify-content: space-between;
+      line-height:50px;
+      &__text{
+        font-size: 16px;
+        color:  #434A54;
+        padding-left: 10px;
+      }
+      &__icon{
+        padding-right: 10px;
+  
+      }
+    }
+    &__box2{
+      width:100px;
+      background-color:#38AEF0;
+      margin-left: 15px;
+      float:left;
+      line-height:50px;
+      text-align:center;
+    }
+  }
+  
+  .btn-send {
+    text-decoration: none ;
+    color: #FFFFFF;
+  }
 }
