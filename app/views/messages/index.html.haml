@@ -1,35 +1,7 @@
 .header
   .header__logo
-    グループを作成しました
-  .sidebar
-    .sidebar__box
-      .sidebar__box__name
-        川口
-      .sidebar__box__icon
-        =link_to "http://localhost:3000/",class: "sidebar__box__icon sidebar__box__icon--edit" do
-          =fa_icon  'edit',  class: "sidebar__box__icon--icon1"
-          %span<>
-        =link_to "http://localhost:3000/",class: "sidebar__box__icon sidebar__box__icon--cog" do
-          =fa_icon  'cog',  class: "sidebar__box__icon--icon2"
-          %span<>
-  .sidebottom
-    .sidebottom__group
-      .sidebottom__group__name
-        test
-      .sidebottom__group__message
-        こんにちは
-      .sidebottom__group__name
-        test
-      .sidebottom__group__message
-        こんにちはgnnnnndkkkkkkk
-      .sidebottom__group__name
-        test
-      .sidebottom__group__message
-        こんにちは
-      .sidebottom__group__name
-        test
-      .sidebottom__group__message
-        こんにちは
+    = render 'devise/shared/sidebar'
+  
 .chatbox
   .chattop
     .chattop__box
