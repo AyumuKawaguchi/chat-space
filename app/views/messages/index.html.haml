@@ -1,48 +1,47 @@
-.header
-  .header__logo
-    = render 'devise/shared/sidebar'
+-# .header
+-#   .header__logo
+= render 'devise/shared/sidebar'
   
   
-.chatbox
-  .chattop
-    .chattop__box
-      .chattop__box__mini1
-        .chattop__box__mini1__title
-          tester
-        .chattop__box__mini1__member
-          メンバー：kawaguchi ,ayumu
-      .chattop__box__mini2
-        .chattop__box__mini2__btn
-          = link_to "Edit", "http://localhost:3000/", class: 'btn btn-edit'
+.chatmain
+  .chatmain__top
+    .chatmain__top__leftbox
+      .chatmain__top__leftbox__title
+        tester
+      .chatmain__top__leftbox__member
+        メンバー：kawaguchi ,ayumu
+    .chatmain__top__rightbox
+      .chatmain__top__rightbox__btn
+        = link_to "Edit", "http://localhost:3000/", class: 'btn btn-edit'
 
-  .chatcenter
-    .chatcenter__namebox
-      .chatcenter__namebox__name
+  .chatmain__center
+    .chatmain__center__namebox
+      .chatmain__center__namebox__name
         カワグチ
-      .chatcenter__namebox__days
+      .chatmain__center__namebox__days
         2019/10/20
-    .chatcenter__textbox
+    .chatmain__center__textbox
       テスト
-    .chatcenter__namebox
-      .chatcenter__namebox__name
+    .chatmain__center__namebox
+      .chatmain__center__namebox__name
         カワグチ
-      .chatcenter__namebox__days
+      .chatmain__center__namebox__days
         2019/10/20
-    .chatcenter__textbox
+    .chatmain__center__textbox
       テスト
-  .form
-    .form__message
-      .form__message__box1
-        .form__message__box1__text
+  .chatmain__form
+    .chatmain__form__message
+      .chatmain__form__message__box1
+        .chatmain__form__message__box1__text
           textarea
-        .form__message__box1__icon
-          =link_to "http://localhost:3000/",class: "form__mesaage__box__icon form__mesaage__box__icon--image" do
-            =fa_icon  'image',  class: "form__mesaage__box__icon"
+        .chatmain__form__message__box1__icon
+          =link_to "http://localhost:3000/",class: "chatmain__form__mesaage__box__icon chatmain__form__mesaage__box__icon--image" do
+            =fa_icon  'image',  class: "chatmain__form__mesaage__box__icon"
 
           -# = form_for [] do |f|
           -#   = f.label :image, class: "form__message__box1__icon" do
           -#     = fa_icon "image"
           -#     = f.file_field :image, class: "form__message__box1__icon--image"
-      .form__message__box2
-        .form__message__box2__btn
+      .chatmain__form__message__box2
+        .chatmain__form__message__box2__btn
           = link_to "send", "http://localhost:3000/", class: 'btn btn-send'
