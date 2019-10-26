@@ -1,0 +1,11 @@
+.chatmain__center__box
+  .chatmain__center__box__namebox
+    .chatmain__center__box__namebox__name
+      = message.user.name
+    .chatmain__center__box__namebox__days
+      = message.created_at.strftime("%Y/%m/%d %H:%M")
+  .chatmain__center__box__textbox
+    - if message.body.present?
+      %p.chatmain__center__box__textbox
+        = message.body
+    = image_tag message.image.url, class: 'lower-message__image' if message.image.present?

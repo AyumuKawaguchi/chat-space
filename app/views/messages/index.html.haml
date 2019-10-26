@@ -14,36 +14,57 @@
         メンバー：kawaguchi ,ayumu
     .chatmain__top__rightbox
       .chatmain__top__rightbox__btn
-        = link_to "Edit", "http://localhost:3000/", class: 'btn btn-edit'
+        = link_to "Edit", edit_group_path(@group) , class: 'btn btn-edit'
 
   .chatmain__center
-    .chatmain__center__namebox
-      .chatmain__center__namebox__name
-        カワグチ
-      .chatmain__center__namebox__days
-        2019/10/20
-    .chatmain__center__textbox
-      テスト
-    .chatmain__center__namebox
-      .chatmain__center__namebox__name
-        カワグチ
-      .chatmain__center__namebox__days
-        2019/10/20
-    .chatmain__center__textbox
-      テスト
-  .chatmain__form
-    .chatmain__form__message
-      .chatmain__form__message__box1
-        .chatmain__form__message__box1__text
-          textarea
-        .chatmain__form__message__box1__icon
-          =link_to "http://localhost:3000/",class: "chatmain__form__mesaage__box__icon chatmain__form__mesaage__box__icon--image" do
-            =fa_icon  'image',  class: "chatmain__form__mesaage__box__icon"
+    .chatmain__center__box
+      = render partial: 'message', collection: @messages
+    -# @messages.each do |message|
+    -# .chatmain__center__namebox
+    -#   .chatmain__center__namebox__name
+    -#     @messages.each do |message|
+    -#   .chatmain__center__namebox__days
+    -#     2019/10/20
+    -# .chatmain__center__textbox
+    -#   テスト
+    
+  -# .chatmain__form
+  -#   .chatmain__form__message
+      -# = form_for [@group, @message] do |f|
+      -#   = f.text_field :body, class: "chatmain__form__message__box1__text", placeholder: 'type a message'
+      -#   = f.label :image, class: 'chatmain__form__mesaage__box1__icon' do
+      -#     = fa_icon 'image', class: 'icon'
+      -#     = f.file_field :image, type: 'hidden'
+      -#   = f.submit 'Send', class: "btn-send"
 
-          -# = form_for [] do |f|
-          -#   = f.label :image, class: "form__message__box1__icon" do
-          -#     = fa_icon "image"
-          -#     = f.file_field :image, class: "form__message__box1__icon--image"
-      .chatmain__form__message__box2
-        .chatmain__form__message__box2__btn
-          = link_to "send", "http://localhost:3000/", class: 'btn btn-send'
+
+  -# .form
+  -#   %form
+  -#     %input.form__message
+  -#     .form__mask
+  -#       %label.form__mask__image
+  -#         = fa_icon 'picture-o', class: 'icon'
+  -#         %input.hidden{type: 'file'}
+  -#     %input.form__submit{type: 'submit', value: 'Send'}
+
+  .form
+    = form_for [@group, @message] do |f|
+      = f.text_field :body, class: 'form__message', placeholder: 'type a message'
+      .form__mask
+        = f.label :image, class: 'form__mask__image' do
+          = fa_icon 'image', class: 'icon'
+          = f.file_field :image, class: 'hidden'
+        = f.submit 'Send', class: 'form__submit'
+
+      -# .chatmain__form__message__box1
+      -#   .chatmain__form__message__box1__text
+      -#     = form_for [@group, @message] do |f|
+      -#       = f.text_field :body, class: "chatmain__form__message__box1__text", placeholder: 'type a message'
+      -#       .chatmain__form__message__box1__icon
+      -#         = f.label :image, class: 'chatmain__form__mesaage' do
+      -#           = fa_icon 'image', class: 'chatmain__form__mesaage__box1__icon'
+      -#           = f.file_field :image, type: 'hidden'
+      -#         .chatmain__form__message__box2
+      -#           = f.submit"Send",class: "btn-send"
+
+

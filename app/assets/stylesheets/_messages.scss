@@ -63,23 +63,28 @@ html,body{
 //   }
 // }
 .sidebar__bottom{
-  height:calc(100vh - 100px);
+  height:calc(100vh - 120px);
   background-color:#2f3e51;
   overflow: scroll;
   padding: 20px 20px 0;
-  &__group{
-    margin-bottom: 40px;
+  &__group-white{
     color:#FFFFFF;
+    text-decoration: none;
     &__name{
       font-size:15px;
       padding-bottom:5px;
     }
     &__message{
       font-size:11px;
+      margin-bottom: 40px;
     }
   }
 }
 
+// .sidebar__bottom__group-white {
+//   color: white;
+//   text-decoration: none;
+// }
 
 .chatmain{
   width:calc(100vw - 300px);
@@ -119,72 +124,70 @@ html,body{
   }
   &__center{
     box-sizing: border-box;
-    height: calc(100vh - 172px);
+    height: calc(100vh - 192px);
     padding: 46px 40px;
     background-color: #fafafa;
     overflow: scroll;
-    &__namebox{
-      display: flex;
-      height: 26px;
-      padding-bottom: 10px;
-      &__name{
-        font-size: 16px;
-        font-weight: bold;
-        color: #434A54;
-        margin-bottom: 10px;
-      }
-      &__days{
-        font-size: 12px;
-        color: #999999;
-      }
-    }
-    &__textbox{
-      font-size: 14px;
-      color: #434A54;
+    &__box{
       padding-bottom: 40px;
-    }
-   }
-   &__form{
-     box-sizing: border-box;
-     height: 90px;
-     padding: 20px 40px;
-     background-color: #ddd;
-     &__message{
-       display: flex;
-       &__box1{
-         position: relative;
-         width: 100%;
-         background-color: white;
-         &__text{
-           line-height: 50px;
-           width: 100%;
-           padding: 0 40px 0 10px;
-           color: #434a54;
-           border-style: none;
-         }
-         &__icon{
-           font-size: 1.3rem;
-           position: absolute;
-           top: 10px;
-           right: 10px;
-           cursor: pointer;
-         }
-       }
-       &__box2{
-         width:100px;
-         background-color:#38AEF0;
-         margin-left: 15px;
-         float:left;
-         line-height:50px;
-         text-align:center;
-         &__btn{
+      &__namebox{
+        display: flex;
+        height: 26px;
+        padding-bottom: 10px;
+        &__name{
+          font-size: 16px;
+          font-weight: bold;
+          color: #434A54;
+          margin-bottom: 10px;
+        }
+        &__days{
+          font-size: 12px;
+          color: #999999;
+        }
+      }
+      &__textbox{
+        font-size: 14px;
+        color: #434A54;
+      }
+    } 
+  }
+}
 
-         }
-       }
-     }
-    }
-   }
 
+.form {
+  background-color: #DDDDDD;
+  box-sizing: border-box;
+  height: 90px;
+  padding: 20px 50px 20px 40px;
+  &__message {
+    border: none;
+    float: left;
+    height: 50px;
+    width: calc(100% - 150px);
+  }
+  &__mask {
+    background-color: white;
+    float: left;
+    height: 50px;
+    &__image {
+      font-size: 20px;
+      line-height: 50px;
+    }
+    .hidden {
+      display: none;
+    }
+  }
+  &__submit {
+    background-color: #38AEF0;
+    border: none;
+    color: white;
+    float: right;
+    font-size: 16px;
+    height: 50px;
+    margin-left: 15px;
+    padding: 0 30px;
+  }
+}
 
 
 .btn-edit {
@@ -197,47 +200,47 @@ html,body{
   color: #FFFFFF;
 }
 
-.form{
-  height: 90px;
-  padding-left: 40px;
-  padding-right: 40px;
-  background-color: #ddd;
-  position:absolute;
-  top:848px;
-  left:300px;
-  &__message{
-    background-color: #ddd;
-    height:50px;
-    width:  calc(100vw - 380px);
-    position:relative;
-    top:20px;
-    &__box1{
-      float:left;
-      background-color: white;
-      width:1185px;
-      display: flex;
-      justify-content: space-between;
-      line-height:50px;
-      &__text{
-        font-size: 16px;
-        color:  #434A54;
-        padding-left: 10px;
-      }
-      &__icon{
-        padding-right: 10px;
+// .form{
+//   height: 90px;
+//   padding-left: 40px;
+//   padding-right: 40px;
+//   background-color: #ddd;
+//   position:absolute;
+//   top:848px;
+//   left:300px;
+//   &__message{
+//     background-color: #ddd;
+//     height:50px;
+//     width:  calc(100vw - 380px);
+//     position:relative;
+//     top:20px;
+//     &__box1{
+//       float:left;
+//       background-color: white;
+//       width:1185px;
+//       display: flex;
+//       justify-content: space-between;
+//       line-height:50px;
+//       &__text{
+//         font-size: 16px;
+//         color:  #434A54;
+//         padding-left: 10px;
+//       }
+//       &__icon{
+//         padding-right: 10px;
   
-      }
-    }
-    &__box2{
-      width:100px;
-      background-color:#38AEF0;
-      margin-left: 15px;
-      float:left;
-      line-height:50px;
-      text-align:center;
-    }
-  }
+//       }
+//     }
+//     &__box2{
+//       width:100px;
+//       background-color:#38AEF0;
+//       margin-left: 15px;
+//       float:left;
+//       line-height:50px;
+//       text-align:center;
+//     }
+//   }
   
   
-}
+// }
 
