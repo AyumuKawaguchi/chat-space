@@ -1,4 +1,4 @@
-.chatmain__center__box
+.chatmain__center__box{"data-message-id": "#{message.id}"}
   .chatmain__center__box__namebox
     .chatmain__center__box__namebox__name
       = message.user.name
@@ -8,4 +8,4 @@
     - if message.body.present?
       %p.chatmain__center__box__textbox
         = message.body
-    = image_tag message.image.url, class: 'lower-message__image' if message.image.present?
+    = image_tag message.image.url, class: 'chatmain__center__box__textbox__image'if message.image.present?
