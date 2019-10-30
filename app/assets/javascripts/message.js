@@ -1,42 +1,22 @@
 $(function(){
   function buildHTML(message){
-    if ( message.image ){
-    var html =
-    `
-    <div class="chatmain__center__box" data-message-id=${message.id}>
-    <div class="chatmain__center__box__namebox__name">
-                        ${message.user_name}
-    </div>
-      <div class="chatmain__center__box__namebox__days">
-                        ${message.date}
+    image = ( message.image )? ( message.image ) : ""; 
+      var html = 
+      `
+      <div class="chatmain__center__box" data-message-id=${message.id}>
+      <div class="chatmain__center__box__namebox">
+      <div class="chatmain__center__box__namebox__name"> ${message.user_name}</div>
+      <div class="chatmain__center__box__namebox__days"> ${message.created_at}</div>
       </div>
-        <div class="chatmain__center__box__textbox">
-          <p class="chatmain__center__box__textbox">
-                        ${message.body}
-          </p>
-        </div>
-        <img src=${message.image} >
-        </div>`
-    return html;
-  } else{
-    var html =
-
-    `<div class="chatmain__center__box" data-message-id=${message.id}>
-    <div class="chatmain__center__box__namebox__name">
-                        ${message.user_name}
-    </div>
-      <div class="chatmain__center__box__namebox__days">
-                        ${message.date}
+      <div class="chatmain__center__box__textbox>
+      <p class="chatmain__center__box__textbox">${message.body} </p>
+      <img src="${image}" > 
       </div>
-        <div class="chatmain__center__box__textbox">
-          <p class="chatmain__center__box__textbox">
-                        ${message.body}
-          </p>
-        </div>
-        </div>`
-        return html;
-    };
+      </div>`
+      return html;
+    
   }
+  
 
 
 
@@ -64,6 +44,28 @@ $(function(){
     });
     return false;
   });
-});
 
-
+  var reloadMessages = function(){
+    if (window.location.href.match(/\/groups\/\d+\/messages/)){
+      last_message_id = $('.chatmain__center__box:last').data("message-id");
+      $.ajax({
+        url: 'api/messages#index {:format=>"json"}', 
+        type: 'get',
+        dataType: 'json',
+        data: {id: last_message_id} 
+      })
+      .done(function(messages) { 
+        var insertHTML = '';
+        messages.forEach(function(message){ 
+          insertHTML = buildHTML(message);  
+        $('.chatmain__center').append(insertHTML); 
+        $('.chatmain__center').animate({scrollTop: $('.chatmain__center')[0].scrollHeight}, 'fast');   
+        });
+      })
+      .fail(function(messages) {
+        alert('自動更新に失敗しました');
+      });
+    };
+  };
+  setInterval(reloadMessages, 5000);
+})

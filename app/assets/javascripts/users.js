@@ -52,7 +52,7 @@ $(function(){
     
     });
   });
-  $(document).on("click", ".chat-group-user__btn", function() {
+  $(document).on("click", ".chat-group-user__btn--add", function() {
     const userName = $(this).attr("data-user-name");  // data-user-nameの値をuserNameに代入している
     const userId = $(this).attr("data-user-id");
     $(this)
