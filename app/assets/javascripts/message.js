@@ -38,9 +38,10 @@ $(function(){
       $('.chatmain__center').append(html);
       $('.chatmain__center').animate({scrollTop: $('.chatmain__center')[0].scrollHeight}, 'fast');   
       $('#message_body').val('');
+      $('#message_image').val('');
     })
     .fail(function(){
-      alert('error');
+      alert('連続でSENDボタンを押さないでください');
     });
     return false;
   });
