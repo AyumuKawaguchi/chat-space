@@ -20,7 +20,7 @@
     .chatmain__top__rightbox
       .chatmain__top__rightbox__btn
         = link_to "Edit", edit_group_path(@group) , class: 'btn btn-edit'
-
+        /edit_group_path(@group)の@groupはグループがいっぱいあるからどのグループなのか指定している。
 
   .chatmain__center
     = render partial: 'message', collection: @messages
