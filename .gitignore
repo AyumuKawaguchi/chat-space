@@ -12,6 +12,8 @@
 /tmp/*
 !/log/.keep
 !/tmp/.keep
+!/tmp/pid/.keep
+!/tmp/sockets/.keep
 
 # Ignore Byebug command history file.
 .byebug_history

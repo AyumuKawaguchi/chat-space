@@ -46,6 +46,8 @@ test:
 #
   production:
     url: <%= ENV['DATABASE_URL'] %>
+    adapter: pg
+    database: db/production.pg
 #
 # production:
 #   <<: *default
